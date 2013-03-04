@@ -2,7 +2,7 @@
   "name": "stability",
   "description": "",
   "version": "0.0.0",
-  "stability": "experimental",
+  "stability": "stable",
   "homepage": "https://github.com/dominictarr/stability",
   "repository": {
     "type": "git",

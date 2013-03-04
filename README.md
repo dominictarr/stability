@@ -6,7 +6,7 @@ see [node.js stability index](http://nodejs.org/api/documentation.html#documenta
 
 # Stability
 
-Experimental: Expect the unexpected. Please provide feedback on api and you use-case
+Stable: Expect patches, possible features additions.
 
 ## Examples
 
