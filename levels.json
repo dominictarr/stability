@@ -1,0 +1,14 @@
+{
+"Depreciated"
+  : "Expect no more changes. Avoid using this module.",
+"Experimental"
+  : "Expect the unexpected. Please provide feedback on api and you use-case",
+"Unstable"
+  : "Expect patches and features, possible api changes.",
+"Stable"
+  : "Expect patches, possible features additions.",
+"Frozen"
+  : "Expect only patches. Please do not make feature requests.",
+"Locked"
+  : "Expect no changes, except serious bugs. Please do not make feature requests."
+}

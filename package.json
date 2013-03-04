@@ -1,0 +1,21 @@
+{
+  "name": "stability",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dominictarr/stability",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/stability.git"
+  },
+  "dependencies": {
+    "markdown-sections": "~1.0.1",
+    "jsup": "0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT",
+  "stability": "stable"
+}
