@@ -2,6 +2,7 @@
   "name": "stability",
   "description": "",
   "version": "0.0.0",
+  "stability": "stable",
   "homepage": "https://github.com/dominictarr/stability",
   "repository": {
     "type": "git",
@@ -9,7 +10,7 @@
   },
   "dependencies": {
     "markdown-sections": "~1.0.1",
-    "jsup": "0.0.1"
+    "optimist": "~0.3.5"
   },
   "devDependencies": {},
   "scripts": {
@@ -17,5 +18,5 @@
   },
   "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
   "license": "MIT",
-  "stability": "stable"
+  "bin": "./index.js"
 }
