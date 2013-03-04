@@ -6,9 +6,9 @@ see [node.js stability index](http://nodejs.org/api/documentation.html#documenta
 
 # Stability
 
-Stable: Expect patches, possible features additions.
+Experimental: Expect the unexpected. Please provide feedback on api and you use-case
 
-## Usage
+## Examples
 
 ```
 npm install -g stability
@@ -19,17 +19,32 @@ cd your-module
 
 stability stable --dry
 
-# update the README
+# update the README & package.json
 
-stability stable
+stability stable --package --readme
 
 # make a git commit.
 
 stability stable --commit
 
+# update README, package.json and git commit 
+
+stability stable --all
 ```
 
+## Usage
 
+```
+stability STABILITY_LEVEL [options]
+options:
+-r, --readme    # add stability message to readme.
+-p, --package   # add stability message to package.
+-c, --commit    # commit stability messages
+-a, --all       # all of the above.
+-d, --dry       # preview the above changes on stdout only.
+                # do not make changes! 
+-h, --help      # display this message
+```
 
 ## License
 
