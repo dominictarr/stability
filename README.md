@@ -57,7 +57,7 @@ options:
 
 Defined [here](https://github.com/dominictarr/stability/blob/master/levels.json)
 
-### Depreciated
+### Deprecated
 
 Expect no more changes. Avoid using this module.
 
