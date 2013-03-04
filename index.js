@@ -1,10 +1,40 @@
+#! /usr/bin/env node
 
 var fs = require('fs')
 var sections = require('markdown-sections')
-var opts     = require('optimist').argv
-//var jsup     = require('jsup')
+var opts     = require('optimist')
+  .alias('r', 'readme')
+  .alias('a', 'all')
+  .alias('p', 'package')
+  .alias('c', 'commit')
+  .argv
 var exec     = require('child_process').exec
 
+function usage () {
+  console.error(
+    [ 'stability STABILITY_LEVEL [options]'
+    , 'options:'
+    , '-r, --readme    # add stability message to readme.'
+    , '                # defaults to true unset with --no-readme'
+    , '-p, --package   # add stability message to package.'
+    , '-c, --commit    # commit stability messages'
+    , '-a, --all       # all of the above.'
+    , '-d, --dry       # preview the above changes on stdout only.'
+    , '                # do not make changes! '
+    , '-h, --help      # display this message'
+    , ''
+    , 'STABILITY_LEVEL must be one of:'
+    , 'depreciated, experimental, unstable, stabel, frozen, locked'
+    , ''
+    , 'see https://github.com/dominictarr/stability for more info'
+    ].join('\n')
+  )
+  process.exit(1)
+}
+
+if(opts.h || opts.help) usage()
+if(opts.all)
+  opts.readme = opts.commit = opts.package = true
 
 var readme = fs.readdirSync('./')
   .filter(function (name) {
@@ -42,12 +72,7 @@ var k = stability && findLast(levels, function (level) {
   return level.toLowerCase().indexOf(stability.toLowerCase()) === 0
 })
 
-if(k == null) {
-  console.error('expected: stability LEVEL')
-  console.error('where LEVEL is one of:')
-  console.error(levels)
-  process.exit(1)
-}
+if(k == null) usage()
 
 a.splice(
   i == null ? 1 : i,
@@ -64,7 +89,7 @@ var newText = a.join('\n')
 var p = JSON.parse(fs.readFileSync('./package.json', 'utf8'))
 
 p.stability = levels[k].toLowerCase()
-p = JSON.stringify(p, false, 2)
+p = JSON.stringify(p, false, 2) + '\n'
 
 if(opts.dry) {
   console.log(newText)
