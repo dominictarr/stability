@@ -2,6 +2,8 @@
 
 tool to add a stability message to README.
 
+Stability expresses the sort of changes you expect to make to your module.
+
 see [node.js stability index](http://nodejs.org/api/documentation.html#documentation_stability_index)
 
 # Stability
