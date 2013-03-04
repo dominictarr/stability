@@ -1,7 +1,7 @@
 {
   "name": "stability",
   "description": "Tool to insert node.js style stability messages",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "stability": "stable",
   "homepage": "https://github.com/dominictarr/stability",
   "repository": {
