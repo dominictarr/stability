@@ -2,7 +2,7 @@
 "Depreciated"
   : "Expect no more changes. Avoid using this module.",
 "Experimental"
-  : "Expect the unexpected. Please provide feedback on api and you use-case",
+  : "Expect the unexpected. Please provide feedback on api and your use-case.",
 "Unstable"
   : "Expect patches and features, possible api changes.",
 "Stable"
