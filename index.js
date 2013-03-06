@@ -15,7 +15,7 @@ function usage () {
     [ 'stability STABILITY_LEVEL [options]'
     , 'options:'
     , '-r, --readme    # add stability message to readme.'
-    , '                # defaults to true unset with --no-readme'
+    , '                # defaults to true, disable with --no-readme'
     , '-p, --package   # add stability message to package.'
     , '-c, --commit    # commit stability messages'
     , '-a, --all       # all of the above.'
@@ -62,11 +62,9 @@ var i = findLast(a, function (section, j) {
   })
 
 var stability = opts._[0]
-var levels = [
-  'Depreciated', 'Experimental', 'Unstable', 'Stable', 'Frozen', 'Locked'
-]
 
 var descriptions = require('./levels.json')
+var levels = Object.keys(descriptions)
 
 var k = stability && findLast(levels, function (level) {
   return level.toLowerCase().indexOf(stability.toLowerCase()) === 0
