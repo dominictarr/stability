@@ -24,7 +24,7 @@ function usage () {
     , '-h, --help      # display this message'
     , ''
     , 'STABILITY_LEVEL must be one of:'
-    , 'depreciated, experimental, unstable, stabel, frozen, locked'
+    , 'depreciated, experimental, unstable, stable, frozen, locked'
     , ''
     , 'see https://github.com/dominictarr/stability for more info'
     ].join('\n')
