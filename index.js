@@ -7,7 +7,9 @@ var opts     = require('optimist')
   .alias('a', 'all')
   .alias('p', 'package')
   .alias('c', 'commit')
+  .alias('d', 'dry')
   .argv
+
 var exec     = require('child_process').exec
 
 function usage () {
@@ -58,7 +60,7 @@ function findLast (array, test) {
 }
 
 var i = findLast(a, function (section, j) {
-    return /^#\s*stability/.test(section.toLowerCase())
+    return /^#+\s*stability/.test(section.toLowerCase())
   })
 
 var stability = opts._[0]
@@ -75,7 +77,7 @@ if(k == null) usage()
 a.splice(
   i == null ? 1 : i,
   i == null ? 0 : 1, 
-  [ '# Stability',
+  [ '## Stability',
     '',
     levels[k] + ': ' + descriptions[levels[k]],
     ''
@@ -89,8 +91,11 @@ var p = JSON.parse(fs.readFileSync('./package.json', 'utf8'))
 p.stability = levels[k].toLowerCase()
 p = JSON.stringify(p, false, 2) + '\n'
 
+console.log(opts)
+
 if(opts.dry) {
-  console.log(newText)
+  if(opts.readme)
+    console.log(newText)
   if(opts.package)
     console.log(p)
   return
