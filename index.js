@@ -91,8 +91,6 @@ var p = JSON.parse(fs.readFileSync('./package.json', 'utf8'))
 p.stability = levels[k].toLowerCase()
 p = JSON.stringify(p, false, 2) + '\n'
 
-console.log(opts)
-
 if(opts.dry) {
   if(opts.readme)
     console.log(newText)
